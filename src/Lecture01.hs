@@ -270,7 +270,7 @@ problem19 :: [a] -> Int -> [a]
 problem19 xs n
   | n>0 = rotate m xs
   | n<0 = rotate ((length xs) + m) xs
-  | otherwise = error "wtf"
+  | otherwise = error "An error occurred"
   where rotate l xs = drop l xs ++ take l xs
         m = if length xs >= abs n then n else mod n (length xs)
 
@@ -281,9 +281,9 @@ problem19 xs n
 -- λ> problem20 2 "abcd"
 -- ('b',"acd")
 problem20 :: Int -> [a] -> (a, [a])
-problem20 _ [] = error "wtf"
+problem20 _ [] = error "An error occurred"
 problem20 n xs
-  | n > length xs = error "wtf"
+  | n > length xs = error "An error occurred"
   | otherwise = (last firstPart, init firstPart ++ (drop n xs))
   where firstPart = take n xs
 
